@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product — Virex</title>
+  <meta name="description" content="Virex sportswear product page.">
+  <meta name="theme-color" content="#0f1f3d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- ============ SVG sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 566 336">
+      <path fill="currentColor" d="M4 4L146 32L168 47L333 272L332 287L300 327L289 329L125 109L26 36Z M197 43L199 60L329 242L355 258L392 210L336 120L410 32L318 28L280 49Z M558 13L459 32L434 48L364 138L397 189L418 183L556 26Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/><path d="M2.5 3h2.4l2.4 11.6a1.8 1.8 0 0 0 1.8 1.4h8.4a1.8 1.8 0 0 0 1.8-1.4L21 7H6"/></symbol>
+    <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.7 19a2 2 0 0 0 1.4-.6l6.2-6.2a6 6 0 0 0-8.5-8.5L5.6 9.9A2 2 0 0 0 5 11.3V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.8 2.2a2 2 0 0 0-1.6 0L2.6 6.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0l8.6-3.9a1 1 0 0 0 0-1.8z"/><path d="m22 17.6-9.2 4.2a2 2 0 0 1-1.6 0L2 17.6"/><path d="m22 12.6-9.2 4.2a2 2 0 0 1-1.6 0L2 12.6"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+    <symbol id="i-run" viewBox="0 0 24 24"><circle cx="15.5" cy="4.5" r="2"/><path d="m12.5 8.5-3 4.5 4 3.2-.8 5"/><path d="m12.5 8.5 4.2 2.1 2.6-2"/><path d="m11.4 9.6-3.9 1.4-1.6 3"/><path d="m9.5 13-2.8 5.6-3.4.9"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/><path d="M12 9v6"/></symbol>
+    <symbol id="i-stretch" viewBox="0 0 24 24"><path d="m15 3 6 0 0 6"/><path d="m9 21-6 0 0-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="19" height="19" x="2.5" y="2.5" rx="5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="header" data-sticky="true">
+  <div class="site-header__bar">
+    <a class="logo" href="index.html" aria-label="Virex home">
+      <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="logo__word">Virex</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="catalog.html">Products</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#about">About us</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn--lime nav__cta-mobile" href="catalog.html">Order apparel <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="btn btn--lime btn--header" href="catalog.html">Order apparel <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <button class="cart-pill" type="button" id="cartPill" aria-label="Cart, 0 items">
+        <svg class="ico"><use href="#i-cart"/></svg><span class="cart-pill__n" id="cartCount">0</span>
+      </button>
+      <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico ico--open"><use href="#i-menu"/></svg>
+        <svg class="ico ico--close"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="catalog-page">
+  <div id="pdp"></div>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <a class="logo logo--light" href="index.html" aria-label="Virex home">
+      <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="logo__word">Virex</span>
+    </a>
+    <p class="footer__tag">Join the community of those<br>who choose an active life!</p>
+    <a class="btn btn--lime" href="catalog.html">Order now <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <ul class="social" aria-label="Social media">
+      <li><a href="#" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a></li>
+      <li><a href="#" aria-label="YouTube"><svg class="ico"><use href="#i-youtube"/></svg></a></li>
+      <li><a href="#" aria-label="Telegram"><svg class="ico"><use href="#i-telegram"/></svg></a></li>
+    </ul>
+  </div>
+  <div class="footer__bottom">
+    <nav aria-label="Footer">
+      <a href="catalog.html">Products</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#about">About us</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <p>© 2026 Virex. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/main.js" defer></script>
+<script src="js/product.js" defer></script>
+</body>
+</html>

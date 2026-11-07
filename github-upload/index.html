@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virex — Move more. Live active.</title>
+  <meta name="description" content="Virex is next-generation sportswear for those who never stop. Light, durable, thermoregulating apparel built for movement.">
+  <meta name="theme-color" content="#0f1f3d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script>(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');try{if(sessionStorage.getItem('virex.intro'))c.add('no-intro');else sessionStorage.setItem('virex.intro','1')}catch(e){}})(document)</script>
+</head>
+<body>
+
+<!-- ============ Intro: the three blades of the V assemble, then the curtain lifts ============ -->
+<div class="intro" aria-hidden="true">
+  <svg class="intro__v" viewBox="0 0 566 336">
+    <path class="b1" d="M4 4L146 32L168 47L333 272L332 287L300 327L289 329L125 109L26 36Z"/>
+    <path class="b2" d="M197 43L199 60L329 242L355 258L392 210L336 120L410 32L318 28L280 49Z"/>
+    <path class="b3" d="M558 13L459 32L434 48L364 138L397 189L418 183L556 26Z"/>
+  </svg>
+</div>
+
+<!-- ============ SVG sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 566 336">
+      <path fill="currentColor" d="M4 4L146 32L168 47L333 272L332 287L300 327L289 329L125 109L26 36Z M197 43L199 60L329 242L355 258L392 210L336 120L410 32L318 28L280 49Z M558 13L459 32L434 48L364 138L397 189L418 183L556 26Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/><path d="M2.5 3h2.4l2.4 11.6a1.8 1.8 0 0 0 1.8 1.4h8.4a1.8 1.8 0 0 0 1.8-1.4L21 7H6"/></symbol>
+    <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.7 19a2 2 0 0 0 1.4-.6l6.2-6.2a6 6 0 0 0-8.5-8.5L5.6 9.9A2 2 0 0 0 5 11.3V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.8 2.2a2 2 0 0 0-1.6 0L2.6 6.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0l8.6-3.9a1 1 0 0 0 0-1.8z"/><path d="m22 17.6-9.2 4.2a2 2 0 0 1-1.6 0L2 17.6"/><path d="m22 12.6-9.2 4.2a2 2 0 0 1-1.6 0L2 12.6"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+    <symbol id="i-run" viewBox="0 0 24 24"><circle cx="15.5" cy="4.5" r="2"/><path d="m12.5 8.5-3 4.5 4 3.2-.8 5"/><path d="m12.5 8.5 4.2 2.1 2.6-2"/><path d="m11.4 9.6-3.9 1.4-1.6 3"/><path d="m9.5 13-2.8 5.6-3.4.9"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/><path d="M12 9v6"/></symbol>
+    <symbol id="i-stretch" viewBox="0 0 24 24"><path d="m15 3 6 0 0 6"/><path d="m9 21-6 0 0-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="19" height="19" x="2.5" y="2.5" rx="5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="header">
+  <div class="site-header__bar">
+    <a class="logo" href="#top" aria-label="Virex home">
+      <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="logo__word">Virex</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#products">Products</a>
+      <a href="#technology">Technology</a>
+      <a href="#about">About us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--lime nav__cta-mobile" href="#products">Order apparel <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="btn btn--lime btn--header" href="#products">Order apparel <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <button class="cart-pill" type="button" id="cartPill" aria-label="Cart, 0 items">
+        <svg class="ico"><use href="#i-cart"/></svg><span class="cart-pill__n" id="cartCount">0</span>
+      </button>
+      <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico ico--open"><use href="#i-menu"/></svg>
+        <svg class="ico ico--close"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="hero__sky" aria-hidden="true"></div>
+  <svg class="hero__v" viewBox="0 0 1120 707" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
+    <path class="v-lime" d="M0 300H190L430 700H290Z"/>
+    <path class="v-lime" d="M610 0H800L420 700H230Z"/>
+    <path class="v-mint" d="M800 0H990L610 700H420Z"/>
+  </svg>
+
+  <div class="hero__copy">
+    <h1 class="hero__title">
+      <span class="hero__t1"><span class="ln"><span class="ln__i" style="--i:0">Move</span></span><span class="ln"><span class="ln__i" style="--i:1">more.</span></span></span>
+      <span class="hero__t2"><span class="ln"><span class="ln__i" style="--i:2">Live active.</span></span></span>
+    </h1>
+    <p class="hero__lead">Virex is next-generation sportswear for those who never stop.</p>
+    <a class="btn btn--navy" href="catalog.html">Shop the collection <svg class="ico"><use href="#i-arrow"/></svg></a>
+  </div>
+
+  <img class="hero__people" src="assets/img/hero-people.webp" width="2000" height="1493"
+       alt="A male and a female athlete in black and sage Virex training apparel, looking into the distance" fetchpriority="high">
+</section>
+
+<!-- ============ About ============ -->
+<section class="about" id="about">
+  <div class="about__photo">
+    <img src="assets/img/about-runner-bw.webp" width="1400" height="854" loading="lazy"
+         alt="Black-and-white photo of an athlete mid-leap between two concrete walls">
+  </div>
+  <div class="about__body">
+    <div class="about__text" data-reveal>
+      <p class="eyebrow">About us</p>
+      <h2 class="h2">Built<br>for movement</h2>
+      <p class="about__p">We are a Ukrainian sportswear brand that combines innovative technology, minimalist design and maximum comfort in every detail.</p>
+      <p class="about__p about__p--2">Every piece starts on the track: we test cuts, seams and fabrics in real training before anything reaches the shop.</p>
+    </div>
+    <ul class="about__feats">
+      <li data-reveal style="--d:.05s"><svg class="ico ico--lg"><use href="#i-feather"/></svg><span><b>Light &amp; comfortable</b><small>A fit you stop noticing after the first mile.</small></span></li>
+      <li data-reveal style="--d:.12s"><svg class="ico ico--lg"><use href="#i-layers"/></svg><span><b>Innovative materials</b><small>Technical knits with a thermoregulating finish.</small></span></li>
+      <li data-reveal style="--d:.19s"><svg class="ico ico--lg"><use href="#i-gem"/></svg><span><b>Maximum durability</b><small>Flat seams and reinforced stress points.</small></span></li>
+      <li data-reveal style="--d:.26s"><svg class="ico ico--lg"><use href="#i-run"/></svg><span><b>Freedom of movement</b><small>Four-way stretch that follows every stride.</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Why Virex ============ -->
+<section class="why" id="why">
+  <div class="why__copy" data-reveal>
+    <p class="eyebrow">Why Virex?</p>
+    <h2 class="h2">More than<br>just clothing</h2>
+  </div>
+  <div class="why__aside" data-reveal style="--d:.08s">
+    <p class="why__p">Our sportswear helps you achieve more — in sport, at work and in everyday life. One kit that handles the morning run, the office and the evening out.</p>
+  </div>
+  <div class="why__visual">
+    <img src="assets/img/hoodie-blue.webp" width="1600" height="496" loading="lazy"
+         alt="Close-up of a blue Virex zip hoodie with the V logo on the chest">
+  </div>
+  <ul class="checks" data-reveal style="--d:.1s">
+    <li><span class="tick"><svg class="ico"><use href="#i-check"/></svg></span><span><b>Innovative fabrics</b>with a thermoregulation effect</span></li>
+    <li><span class="tick"><svg class="ico"><use href="#i-check"/></svg></span><span><b>Ergonomic cut</b>for a perfect fit</span></li>
+    <li><span class="tick"><svg class="ico"><use href="#i-check"/></svg></span><span><b>Modern design</b>for confident style</span></li>
+  </ul>
+</section>
+
+<!-- ============ Collection ============ -->
+<section class="collection" id="collection">
+  <div class="collection__copy" data-reveal>
+    <p class="eyebrow">Collection</p>
+    <h2 class="h2">For any<br>goal</h2>
+    <p class="collection__p">Training, running, active recovery — choose your perfect kit.</p>
+  </div>
+
+  <div class="trio">
+    <img class="trio__a" src="assets/img/collection-1.webp" width="1000" height="1122" loading="lazy" alt="Woman running in a black Virex crop top and leggings">
+    <img class="trio__b" src="assets/img/collection-2.webp" width="1000" height="1115" loading="lazy" alt="Man in a sage Virex training tee looking to the side">
+    <img class="trio__c" src="assets/img/collection-3.webp" width="1000" height="1173" loading="lazy" alt="Close-up of black Virex training shorts with a reflective V logo">
+  </div>
+
+  <dl class="stats" data-reveal style="--d:.1s">
+    <div><dt>Happy customers</dt><dd>10K+</dd></div>
+    <div><dt>Brand rating</dt><dd>5<span class="star">★</span></dd></div>
+    <div><dt>Quality guarantee</dt><dd>100%</dd></div>
+    <div><dt>Order dispatch time</dt><dd>24h</dd></div>
+  </dl>
+</section>
+
+<!-- ============ Products ============ -->
+<section class="products" id="products">
+  <header class="products__head">
+    <div>
+      <p class="eyebrow">Collection</p>
+      <h2 class="h2">Popular products</h2>
+    </div>
+    <div class="products__tools">
+      <nav class="cats" aria-label="Shop by category">
+        <a href="catalog.html?cat=tops">Tops</a><a href="catalog.html?cat=bottoms">Bottoms</a><a href="catalog.html?cat=outerwear">Outerwear</a><a href="catalog.html?cat=accessories">Accessories</a>
+      </nav>
+      <a class="link" href="catalog.html">View all products <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+  </header>
+
+  <ul class="product-grid" id="productGrid">
+    <li class="product" data-reveal>
+      <div class="product__img"><img src="assets/img/prod-1.webp" width="900" height="900" loading="lazy" alt="Black Virex Pro T-Shirt"></div>
+      <h3 class="product__name">Virex Pro T-Shirt</h3>
+      <div class="product__row"><span class="product__price">$34</span>
+        <button class="add" type="button" data-name="Virex Pro T-Shirt" aria-label="Add Virex Pro T-Shirt to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+    <li class="product" data-reveal style="--d:.06s">
+      <div class="product__img"><img src="assets/img/prod-2.webp" width="900" height="900" loading="lazy" alt="Sage green Virex Motion Top"></div>
+      <h3 class="product__name">Virex Motion Top</h3>
+      <div class="product__row"><span class="product__price">$32</span>
+        <button class="add" type="button" data-name="Virex Motion Top" aria-label="Add Virex Motion Top to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+    <li class="product" data-reveal style="--d:.12s">
+      <div class="product__img"><img src="assets/img/prod-3.webp" width="900" height="900" loading="lazy" alt="Black Virex Flex Jacket"></div>
+      <h3 class="product__name">Virex Flex Jacket</h3>
+      <div class="product__row"><span class="product__price">$64</span>
+        <button class="add" type="button" data-name="Virex Flex Jacket" aria-label="Add Virex Flex Jacket to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+    <li class="product" data-reveal style="--d:.18s">
+      <div class="product__img"><img src="assets/img/prod-4.webp" width="900" height="900" loading="lazy" alt="Black Virex Training Shorts"></div>
+      <h3 class="product__name">Virex Training Shorts</h3>
+      <div class="product__row"><span class="product__price">$39</span>
+        <button class="add" type="button" data-name="Virex Training Shorts" aria-label="Add Virex Training Shorts to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+    <li class="product" data-reveal style="--d:.24s">
+      <div class="product__img"><img src="assets/img/prod-5.webp" width="900" height="900" loading="lazy" alt="Black Virex Fit Leggings"></div>
+      <h3 class="product__name">Virex Fit Leggings</h3>
+      <div class="product__row"><span class="product__price">$44</span>
+        <button class="add" type="button" data-name="Virex Fit Leggings" aria-label="Add Virex Fit Leggings to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+    <li class="product" data-reveal style="--d:.30s">
+      <div class="product__img"><img src="assets/img/prod-6.webp" width="900" height="900" loading="lazy" alt="Sage green Virex Comfort Hoodie"></div>
+      <h3 class="product__name">Virex Comfort Hoodie</h3>
+      <div class="product__row"><span class="product__price">$56</span>
+        <button class="add" type="button" data-name="Virex Comfort Hoodie" aria-label="Add Virex Comfort Hoodie to cart"><svg class="ico"><use href="#i-cart"/></svg></button></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ CTA banner ============ -->
+<section class="banner" aria-labelledby="bannerTitle">
+  <img class="banner__img" src="assets/img/banner-mountain.webp" width="2200" height="1142" loading="lazy" alt="A trail runner climbing a rocky mountain slope above a lake">
+  <div class="banner__copy">
+    <h2 class="banner__title" id="bannerTitle">Live active<br>with Virex</h2>
+    <p class="banner__sub">Choose your movement. Choose Virex.</p>
+  </div>
+  <a class="btn btn--lime banner__cta" href="#products">Order now <svg class="ico"><use href="#i-arrow"/></svg></a>
+</section>
+
+<!-- ============ The mark ============ -->
+<section class="mark" id="mark">
+  <svg class="mark__ghost" aria-hidden="true"><use href="#logo-mark"/></svg>
+  <div class="mark__copy" data-reveal>
+    <p class="eyebrow">The mark</p>
+    <h2 class="h2">One mark.<br>Every detail.</h2>
+    <p class="mark__p">The Virex V is three blades in motion: one driving forward, one rising, one cutting through. It sits on every chest, zip and seam.</p>
+  </div>
+  <div class="mark__visual" data-reveal style="--d:.1s">
+    <figure class="mark__tee">
+      <img src="assets/img/logo-tee.webp" width="1500" height="1006" loading="lazy" alt="Close-up of a sage green Virex performance tee with the navy V emblem across the chest">
+      <figcaption class="chip">Heat-pressed emblem</figcaption>
+    </figure>
+    <figure class="mark__badge">
+      <img src="assets/img/logo-badge.webp" width="1200" height="805" loading="lazy" alt="Brushed-metal Virex V badge with a lime rim light on dark technical fabric">
+      <figcaption class="chip">Brushed-metal badge</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Technology ============ -->
+<section class="tech" id="technology">
+  <div class="tech__photo">
+    <img src="assets/img/fabric-wide.webp" width="1800" height="1005" loading="lazy" alt="Macro shot of dark technical fabric with the reflective Virex V emblem">
+  </div>
+  <div class="tech__copy" data-reveal>
+    <p class="eyebrow">Technology</p>
+    <h2 class="h2">Innovation<br>in every detail</h2>
+    <p class="tech__p">High-tech materials, a considered cut and modern solutions for maximum comfort.</p>
+  </div>
+  <ul class="tech__feats">
+    <li data-reveal style="--d:.05s"><span class="disc"><svg class="ico"><use href="#i-thermo"/></svg></span><span><b>Thermoregulation</b><small>Cool at the start line, warm at the finish.</small></span></li>
+    <li data-reveal style="--d:.12s"><span class="disc"><svg class="ico"><use href="#i-stretch"/></svg></span><span><b>Total stretch</b><small>Four-way fabric that never holds you back.</small></span></li>
+    <li data-reveal style="--d:.19s"><span class="disc"><svg class="ico"><use href="#i-drop"/></svg></span><span><b>Fast drying</b><small>Moisture leaves the skin and dries in minutes.</small></span></li>
+  </ul>
+</section>
+
+<!-- ============ Brand ============ -->
+<section class="brand" id="brand">
+  <div class="brand__copy" data-reveal>
+    <p class="eyebrow">About the brand</p>
+    <h2 class="h2">Virex — more<br>than a brand</h2>
+    <p class="brand__p">It's a lifestyle, movement and the drive to grow. We make sportswear that inspires you to be better.</p>
+    <ul class="brand__values"><li>Designed in Ukraine</li><li>Tested in motion</li><li>Made to last</li></ul>
+  </div>
+  <svg class="brand__logo" aria-hidden="true"><use href="#logo-mark"/></svg>
+  <div class="brand__photo">
+    <img src="assets/img/brand-runners.webp" width="2200" height="1643" loading="lazy" alt="Two athletes in black Virex apparel running past concrete walls under a clear sky">
+  </div>
+</section>
+
+<!-- ============ Reviews ============ -->
+<section class="reviews" id="reviews">
+  <div class="reviews__main">
+    <header class="reviews__head">
+      <div>
+        <p class="eyebrow">Reviews</p>
+        <h2 class="h2">What our customers say</h2>
+        <p class="reviews__sum"><span class="star">★</span> 5.0 average rating · 10K+ happy customers</p>
+      </div>
+      <div class="arrows">
+        <button class="arrow" type="button" id="revPrev" aria-label="Previous review"><svg class="ico"><use href="#i-left"/></svg></button>
+        <button class="arrow" type="button" id="revNext" aria-label="Next review"><svg class="ico"><use href="#i-right"/></svg></button>
+      </div>
+    </header>
+
+    <div class="rev-track" id="revTrack" tabindex="0" aria-label="Customer reviews">
+      <figure class="rev">
+        <span class="rev__q" aria-hidden="true">“</span>
+        <blockquote>The quality is something you feel from the very first workout. Comfortable, stylish and reliable.</blockquote>
+        <figcaption><span class="avatar">OK</span><span><b>Oleksandr K.</b><small>Regular customer</small></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <span class="rev__q" aria-hidden="true">“</span>
+        <blockquote>The leggings stay put on long runs and dry fast in the rain. I've stopped wearing anything else.</blockquote>
+        <figcaption><span class="avatar">IM</span><span><b>Iryna M.</b><small>Trail runner</small></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <span class="rev__q" aria-hidden="true">“</span>
+        <blockquote>A perfect blend of quality, comfort and style. I recommend it to everyone who values movement!</blockquote>
+        <figcaption><span class="avatar">AP</span><span><b>Andrii P.</b><small>Personal trainer</small></span></figcaption>
+      </figure>
+    </div>
+    <div class="dots" id="revDots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
+  </div>
+
+  <aside class="ready">
+    <div class="ready__copy">
+      <h3 class="ready__title">Ready for new<br>achievements?</h3>
+      <p class="ready__p">New drops land every month — free delivery over $60 and 30 days to return.</p>
+    </div>
+    <img class="ready__img" src="assets/img/ready-jacket.webp" width="1100" height="949" loading="lazy" alt="Close-up of a black Virex jacket with the logo on the chest">
+  </aside>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="faq__copy" data-reveal>
+    <p class="eyebrow">FAQ</p>
+    <h2 class="h2">Good to know</h2>
+    <p class="faq__p">Sizing, fabrics, delivery and returns — the questions we hear most. Can't find yours? Ask the team.</p>
+  </div>
+  <div class="faq__list" data-reveal style="--d:.08s">
+    <details name="faq" open>
+      <summary>How do I choose the right size?<svg class="ico"><use href="#i-plus"/></svg></summary>
+      <p>Every product page lists chest, waist and hip measurements. If you are between sizes, go up for a relaxed fit or down for a compression feel.</p>
+    </details>
+    <details name="faq">
+      <summary>What are Virex fabrics made of?<svg class="ico"><use href="#i-plus"/></svg></summary>
+      <p>Our tops and bottoms use lightweight technical knits with four-way stretch, moisture wicking and a thermoregulating finish.</p>
+    </details>
+    <details name="faq">
+      <summary>How should I wash my apparel?<svg class="ico"><use href="#i-plus"/></svg></summary>
+      <p>Machine wash at 30°C with similar colours, no fabric softener, and air dry. This keeps the stretch and the reflective logo in shape.</p>
+    </details>
+    <details name="faq">
+      <summary>How long does delivery take?<svg class="ico"><use href="#i-plus"/></svg></summary>
+      <p>Orders ship within 24 hours. Delivery takes 1–3 working days in Ukraine and 4–9 working days across Europe.</p>
+    </details>
+    <details name="faq">
+      <summary>Can I return an item?<svg class="ico"><use href="#i-plus"/></svg></summary>
+      <p>Yes. Unworn items with tags can be returned within 30 days for a refund or exchange.</p>
+    </details>
+  </div>
+  <aside class="support" data-reveal style="--d:.14s">
+    <p class="eyebrow">Need a hand?</p>
+    <h3 class="support__title">Talk to a real person</h3>
+    <p class="support__p">We answer within one working day, Monday to Friday, 9:00–18:00.</p>
+    <ul class="support__chips" aria-label="Contact channels">
+      <li><a href="#"><svg class="ico"><use href="#i-telegram"/></svg>Telegram</a></li>
+      <li><a href="#"><svg class="ico"><use href="#i-instagram"/></svg>Instagram</a></li>
+      <li><a href="#"><svg class="ico"><use href="#i-youtube"/></svg>YouTube</a></li>
+    </ul>
+    <a class="btn btn--navy" href="#">Write to us <svg class="ico"><use href="#i-arrow"/></svg></a>
+  </aside>
+  
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="footer__promise">
+    <div class="footer__promise-copy">
+      <p class="eyebrow">Join Virex</p>
+      <p class="footer__big">Move more.<br>Live active.</p>
+      <p class="footer__lead">Join 10K+ people who chose an active life.</p>
+    </div>
+    <ul class="promise" data-reveal>
+    <li><svg class="ico"><use href="#i-cart"/></svg><span><b>Free delivery</b>on orders over $60</span></li>
+    <li><svg class="ico"><use href="#i-check"/></svg><span><b>30-day returns</b>unworn items with tags</span></li>
+    <li><svg class="ico"><use href="#i-run"/></svg><span><b>Ships in 24 hours</b>across Ukraine and Europe</span></li>
+    <li><svg class="ico"><use href="#i-gem"/></svg><span><b>Quality guarantee</b>built to last season after season</span></li>
+  </ul>
+  </div>
+  <div class="footer__top">
+    <a class="logo logo--light" href="#top" aria-label="Virex home">
+      <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="logo__word">Virex</span>
+    </a>
+    <p class="footer__tag">Join the community of those<br>who choose an active life!</p>
+    <a class="btn btn--lime" href="#products">Order now <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <ul class="social" aria-label="Social media">
+      <li><a href="#" aria-label="Instagram"><svg class="ico"><use href="#i-instagram"/></svg></a></li>
+      <li><a href="#" aria-label="YouTube"><svg class="ico"><use href="#i-youtube"/></svg></a></li>
+      <li><a href="#" aria-label="Telegram"><svg class="ico"><use href="#i-telegram"/></svg></a></li>
+    </ul>
+  </div>
+  <div class="footer__bottom">
+    <nav aria-label="Footer">
+      <a href="#products">Products</a>
+      <a href="#technology">Technology</a>
+      <a href="#about">About us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <p>© 2026 Virex. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js" defer></script>
+<script src="js/motion.js" defer></script>
+</body>
+</html>

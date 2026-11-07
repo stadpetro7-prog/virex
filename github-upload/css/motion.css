@@ -1,0 +1,183 @@
+/* =========================================================
+   VIREX — motion layer (desktop-first)
+   One idea runs through the whole page: the three blades of the V.
+   They assemble in the intro, slide into the hero, rotate behind
+   "The mark", and tilt into place in "Brand".
+   Everything else is quiet: lines rising out of masks, photos that
+   drift at their own speed, numbers that count.
+   Gated by html.js / html.motion — reduced-motion users get the static page.
+   ========================================================= */
+html { --t0: 1.3s; }                 /* hero starts when the curtain is half-way up */
+html.no-intro { --t0: .05s; }
+
+/* ---------- intro curtain ---------- */
+.intro { display: none; }
+.js .intro {
+  position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; pointer-events: none;
+  background: radial-gradient(60% 60% at 50% 50%, #17305a, var(--navy) 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  animation: curtain .85s cubic-bezier(.76, 0, .24, 1) 1.15s forwards;
+}
+.no-intro .intro, html:not(.motion) .intro { display: none; }
+.intro__v { width: clamp(150px, 14vw, 280px); height: auto; overflow: visible; animation: vOut .5s cubic-bezier(.6, 0, .8, .2) 1.05s forwards; }
+.intro__v path { fill: var(--lime); animation: blade .85s var(--ease) backwards; }
+.intro__v .b1 { animation-delay: .05s; --dx: -90px; --dy: -50px; }
+.intro__v .b2 { animation-delay: .22s; --dx: 20px; --dy: 120px; }
+.intro__v .b3 { animation-delay: .39s; --dx: 110px; --dy: -60px; }
+@keyframes blade { from { opacity: 0; transform: translate(var(--dx), var(--dy)); } }
+@keyframes vOut { to { opacity: 0; transform: scale(1.35) translateY(-14px); } }
+@keyframes curtain { to { clip-path: polygon(0 0, 100% 0, 100% -45%, 0 -12%); visibility: hidden; } }
+
+/* ---------- hero entrance (pure CSS: works even if JS is late) ---------- */
+.js .site-header__bar { animation: dropIn 1s var(--ease) calc(var(--t0) + .35s) backwards; }
+@keyframes dropIn { from { opacity: 0; transform: translateY(-26px); } }
+
+.ln { display: block; clip-path: inset(-.1em -.35em -.16em -.14em); }
+.ln__i { display: block; }
+.hero__title .ln__i { animation: lineUp 1.15s var(--ease) calc(var(--t0) + .2s + var(--i, 0) * .13s) backwards; }
+@keyframes lineUp { from { transform: translateY(115%) rotate(4deg); transform-origin: 0 100%; } }
+.js .hero__lead { animation: fadeUp 1s var(--ease) calc(var(--t0) + .75s) backwards; }
+.js .hero__copy .btn { animation: fadeUp 1s var(--ease) calc(var(--t0) + .9s) backwards; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } }
+
+.js .hero__v path { animation: bladeIn 1.5s cubic-bezier(.16, .84, .24, 1) calc(var(--t0) + var(--k) * .16s) backwards; will-change: transform; }
+.hero__v path:nth-child(1) { --k: 1; --dx: -230px; --dy: 330px; }
+.hero__v path:nth-child(2) { --k: 0; --dx: -300px; --dy: 440px; }
+.hero__v path:nth-child(3) { --k: 2; --dx: -300px; --dy: 440px; }
+@keyframes bladeIn { from { opacity: 0; transform: translate(var(--dx), var(--dy)); } }
+.js .hero__people { animation: peopleIn 1.6s var(--ease) calc(var(--t0) + .2s) backwards; }
+@keyframes peopleIn { from { opacity: 0; transform: translate3d(70px, 46px, 0) scale(1.05); } }
+.js .hero__sky { animation: skyIn 2.2s ease-out var(--t0) backwards; }
+@keyframes skyIn { from { opacity: 0; } }
+
+/* ---------- progress bar + nav spy ---------- */
+.progress { position: fixed; z-index: 120; left: 0; top: 0; width: 100%; height: 3px; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--lime), #7fd3ff); pointer-events: none; }
+.nav a:not(.btn).is-active::after { transform: scaleX(1); }
+.nav a:not(.btn).is-active { color: var(--navy); }
+
+/* ---------- text: lines rise out of masks ---------- */
+.motion .h2[data-reveal], .motion .banner__title[data-reveal], .motion .footer__big[data-reveal] { opacity: 1; transform: none; transition: none; }
+.motion .h2 .ln__i, .motion .banner__title .ln__i, .motion .footer__big .ln__i {
+  transform: translateY(118%) rotate(3deg); transform-origin: 0 100%;
+  transition: transform 1.15s var(--ease) calc(var(--d, 0s) + var(--i, 0) * .11s);
+}
+.motion .is-in .ln__i, .motion .ln-go .ln__i { transform: none; }
+
+/* richer default reveal */
+.motion [data-reveal] { transform: translateY(36px); transition: opacity .9s var(--ease) var(--d, 0s), transform 1.1s var(--ease) var(--d, 0s); }
+.motion [data-reveal].is-in { transform: none; }
+.motion .eyebrow.is-in::before { animation: strokeIn .9s var(--ease) calc(var(--d, 0s) + .1s) backwards; }
+@keyframes strokeIn { from { opacity: 0; transform: translateX(-16px) skewX(-20deg); } }
+
+/* ---------- photos ---------- */
+/* hard-edged photos: a wipe that opens like a blade, with an inner zoom */
+.motion [data-wipe] { clip-path: inset(0 0 100% 0); transition: clip-path 1.3s cubic-bezier(.76, 0, .24, 1) var(--d, 0s); }
+.motion [data-wipe="l"] { clip-path: inset(0 100% 0 0); }
+.motion [data-wipe="r"] { clip-path: inset(0 0 0 100%); }
+.motion [data-wipe="u"] { clip-path: inset(100% 0 0 0); }
+.motion [data-wipe].is-in { clip-path: inset(-80px -80px -100px -80px); }
+.motion [data-wipe] > img:not(.trio img) { scale: 1.28; transition: scale 2s var(--ease) var(--d, 0s); }
+.motion [data-wipe].is-in > img { scale: 1; }
+/* feathered photos: dissolve in from a soft zoom */
+.motion [data-soft] > img, .motion img[data-soft] { opacity: 0; transform: scale(1.14); transition: opacity 1.4s var(--ease) var(--d, 0s), transform 2.2s var(--ease) var(--d, 0s); }
+.motion [data-soft].is-in > img, .motion img[data-soft].is-in { opacity: 1; transform: none; }
+.motion .banner__img { opacity: 0; transform: scale(1.14); transition: opacity 1.4s var(--ease), transform 2.4s var(--ease); }
+.motion .banner.is-in .banner__img { opacity: 1; transform: none; }
+.motion .about__photo, .motion .why__visual, .motion .tech__photo, .motion .brand__photo { overflow: clip; }
+.motion .about__photo > img, .motion .why__visual > img, .motion .tech__photo > img, .motion .brand__photo > img { scale: 1.14; }   /* spare pixels for the parallax */
+.motion .ready__img { scale: 1.12; }
+@media (min-width: 901px) { .motion .banner__img { top: -18%; bottom: auto; height: 136%; } }
+
+/* trio: three portraits rise one after another */
+.motion .trio img { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s cubic-bezier(.76, 0, .24, 1) var(--d, 0s), transform .5s var(--ease); }
+.motion .trio img.is-in { clip-path: inset(-60px -60px -90px -60px); }
+
+/* ---------- counters / icons ---------- */
+.stats dd { font-variant-numeric: tabular-nums; }
+.stats > div { transition: border-color .4s; }
+.motion .stats > div { border-left-color: transparent; background: linear-gradient(var(--lime), var(--lime)) 0 100% / 3px 0 no-repeat; }
+.motion .stats.is-in > div { animation: barGrow 1.2s var(--ease) calc(var(--d, 0s) + var(--k, 0) * .12s) forwards; }
+@keyframes barGrow { from { background-size: 3px 0; } to { background-size: 3px 100%; } }
+.motion .is-in .ico--lg use, .motion .is-in .disc .ico, .motion .is-in .tick .ico { stroke-dasharray: 90; animation: draw 1.4s var(--ease) calc(var(--d, 0s) + .15s) backwards; }
+@keyframes draw { from { stroke-dashoffset: 90; } to { stroke-dashoffset: 0; } }
+.motion .is-in > .disc, .motion .is-in .tick { animation: pop .8s cubic-bezier(.3, 1.5, .5, 1) calc(var(--d, 0s) + .05s) backwards; }
+@keyframes pop { from { transform: scale(.4); opacity: 0; } }
+
+/* ---------- products ---------- */
+.motion .product__img img { translate: 0 30px; scale: .88; opacity: 0; transition: translate 1.1s var(--ease) calc(var(--d, 0s) + .15s), scale 1.1s var(--ease) calc(var(--d, 0s) + .15s), opacity .9s var(--ease) calc(var(--d, 0s) + .15s), transform .5s var(--ease); }
+.motion .product.is-in .product__img img { translate: 0 0; scale: 1; opacity: 1; }
+.product__img::before { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; transition: opacity .35s; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, .7), transparent 62%); }
+.product__img:hover::before { opacity: 1; }
+
+/* ---------- buttons ---------- */
+.btn { position: relative; overflow: hidden; isolation: isolate; will-change: transform; }
+.btn::after { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .55), transparent); transform: skewX(-20deg); }
+.btn:hover::after { animation: sweep .8s var(--ease); }
+@keyframes sweep { to { left: 130%; } }
+.motion .banner__cta { animation: ring 2.8s ease-out infinite; }
+@keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(196, 245, 80, .55); } 70%, 100% { box-shadow: 0 0 0 22px rgba(196, 245, 80, 0); } }
+
+/* ---------- blue chapters: slow shimmer + a blade-shaped sheen ---------- */
+.tech, .brand { position: relative; isolation: isolate; }
+.shimmer { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.shimmer::before, .shimmer::after { content: ""; position: absolute; width: 70%; height: 90%; will-change: transform; }
+.shimmer::before { left: -10%; top: -10%; background: radial-gradient(closest-side, rgba(96, 160, 245, .5), transparent); animation: drift1 17s ease-in-out infinite alternate; }
+.shimmer::after { right: -15%; bottom: -20%; background: radial-gradient(closest-side, rgba(160, 212, 255, .42), transparent); animation: drift2 21s ease-in-out infinite alternate; }
+.shimmer i { position: absolute; top: -20%; bottom: -20%; left: -30%; width: 16%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .13), transparent); transform: skewX(-20deg); animation: sheen 10s ease-in-out 1.5s infinite; }
+@keyframes drift1 { to { transform: translate3d(65%, 28%, 0) scale(1.25); } }
+@keyframes drift2 { to { transform: translate3d(-65%, -34%, 0) scale(1.2); } }
+@keyframes sheen { 0% { left: -30%; } 55%, 100% { left: 135%; } }
+
+/* ---------- reviews ---------- */
+.rev.is-active .rev__q { animation: qPop .9s cubic-bezier(.3, 1.4, .5, 1) backwards; }
+.rev.is-active blockquote { animation: fadeUp .9s var(--ease) .15s backwards; }
+.rev.is-active figcaption { animation: fadeUp .9s var(--ease) .3s backwards; }
+@keyframes qPop { from { opacity: 0; transform: translateY(18px) scale(.6) rotate(-12deg); } }
+.dots i { transition: width .4s var(--ease), background-color .3s; }
+
+/* ---------- FAQ / support / footer ---------- */
+.motion .faq details { position: relative; }
+.motion .faq details::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--navy); opacity: .5; transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s var(--ease) var(--d, 0s); }
+.motion .faq details.is-in::before { transform: scaleX(1); }
+.motion .support.is-in .support__chips li { animation: bob 5s ease-in-out calc(var(--k, 0) * .45s) infinite; }
+@keyframes bob { 50% { transform: translateY(-5px); } }
+.motion .promise li.is-in .ico { animation: pop .8s cubic-bezier(.3, 1.5, .5, 1) calc(var(--d, 0s) + .2s) backwards; }
+
+/* ---------- fly-to-cart ---------- */
+.fly { position: fixed; z-index: 400; pointer-events: none; border-radius: 22%; background: linear-gradient(160deg, #eaf3fd, #cfe2f7); box-shadow: 0 18px 40px -12px rgba(15, 31, 61, .5); overflow: hidden; }
+.fly img { width: 100%; height: 100%; object-fit: contain; }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro { display: none !important; }
+  .shimmer, .progress { display: none; }
+  .ln { clip-path: none; }
+}
+/* category chips that filter the product grid in place */
+.cats a.is-on { background: var(--navy); color: #fff; box-shadow: none; }
+.product__img .product__badge { z-index: 3; }
+.product-grid.shop .product:nth-child(n+5) { display: block; }   /* the single-file build shows the whole range, not just the first row */
+
+/* fix: the round icon discs were stretched into ovals (the svg's default 150px height beat the aspect-ratio) */
+.disc .ico, .tick .ico { height: auto; aspect-ratio: 1; }
+.disc { align-self: flex-start; }
+
+/* the banner photo is overscanned for the parallax, so its soft top/bottom edge is drawn by the section instead */
+@media (min-width: 901px) {
+  .motion .banner::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, var(--bg) 0, rgba(244, 247, 251, 0) 26%, rgba(244, 247, 251, 0) 74%, var(--bg) 100%); }
+  .motion .banner__img { -webkit-mask-image: none; mask-image: none; }
+}
+@media (max-width: 900px) {
+  /* "View all" on a phone: a plain two-column grid instead of an 18-card swipe strip */
+  .product-grid.shop.is-all { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: visible; margin-inline: 0; padding-inline: 0; row-gap: 24px; }
+  .product-grid.shop.is-all .product { flex: none; min-width: 0; width: auto; grid-column: auto; grid-row: auto; }
+  .product-grid.shop.is-all .product__name { font-size: .85em; }
+}
+@media (max-width: 900px) {
+  /* stats: number above its label so "Order dispatch time" never runs off the screen */
+  .stats > div { flex-direction: column-reverse; align-items: flex-start; justify-content: flex-end; gap: 2px; min-width: 0; }
+  .stats dt { min-width: 0; overflow-wrap: anywhere; }
+}
+@media (max-width: 900px) {
+  html { --t0: 1.2s; }
+  .motion [data-wipe] > img:not(.trio img) { scale: 1.12; }
+}
